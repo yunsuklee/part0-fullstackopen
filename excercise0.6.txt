@@ -1,0 +1,20 @@
+note over browser:
+User clicks button on the form, 
+however, the JavaScript the code 
+the browser fetched from the server
+handles the submit event, preventing
+the default handling on form submit, 
+which would have caused a new GET
+request. Instead, the event handler 
+creates the new note, renders it and
+sends the new note to the server in 
+JSON format.
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->browser: HTTP status 201
+
+note:
+server does not ask for a redirect
+and browser stays on the same page.
+end note
